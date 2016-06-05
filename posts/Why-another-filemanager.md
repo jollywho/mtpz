@@ -86,4 +86,5 @@ nav was created to address the above issues and introduce some modern software e
 
 Many areas of nav remain provisional and only solve known issues shallowly. Ideally, over time development will cover these areas better.
 
-2016-05-30
+* * *
+**2016-05-30**
