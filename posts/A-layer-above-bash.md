@@ -1,8 +1,10 @@
-<title>A layer above bash</title>
+<title>A layer above Bash</title>
 <link rel="stylesheet" href="../css/base.css">
-#A layer above bash
+* * *
+#A layer above Bash
+_2016-06-05_
 
-navscript is intended to be used with bash. From the start of navscript there has been a design goal to avoid pipes, sockets, language extensions, etc. so that the user can compose simple bash from within nav.
+navscript is intended to be used with Bash. From the start of navscript there has been a design goal to avoid pipes, sockets, language extensions, etc. so that the user can compose simple Bash from within nav.
 
 ##Commands
 
@@ -72,15 +74,15 @@ Subexpressions are anything inside "()" and the first thing to evaluated in a st
 
 ##!{cmd}
 
-navscript supports legit inline bash using a '!' flag at the front of a statement instead of a command.
+navscript supports legit inline Bash using a '!' flag at the front of a statement instead of a command.
 
     !for i in %d/*; do echo "$i"; done
 
 The shell flag makes for easy running of external programs but also poses some challenges.
 
 ###**_Conflicts_**
-navscript expands $vars synonymously with bash. This results in nav expanding all variables before running the statement in Bash. However, if placed inside quotes variables are ignored by navscript (this also applies to other special symbols). 
-navscript uses pipes as statement delimiters. these are handled first and before any statement is run, which splits and line of bash using pipes into multiple parts. the change is to make flagged lines use the entire line. then pipes can be used without issue inside a subexpression.
+navscript expands $vars synonymously with Bash. This results in nav expanding all variables before running the statement in Bash. However, if placed inside quotes variables are ignored by navscript (this also applies to other special symbols). 
+navscript uses pipes as statement delimiters. these are handled first and before any statement is run, which splits and line of Bash using pipes into multiple parts. the change is to make flagged lines use the entire line. then pipes can be used without issue inside a subexpression.
 
     if 1 | (!echo "bash pipe"   | read invar; echo "$invar") | end
     if 1 | !echo "this is bash" | echo "this isnt"           | end
@@ -164,7 +166,7 @@ Style still to be decided. Very important when writing plugins.
     sp.func()
 
 *something other style*
-
-
 * * *
-**2016-06-05**
+<div id="footer">
+  <a href=../index>Home</a>
+</div>

@@ -1,6 +1,8 @@
 <title>Why another file manager</title>
 <link rel="stylesheet" href="../css/base.css">
+* * *
 #Why another file manager?
+_2016-05-30_
 
 nav started out of frustration when dealing with an existing project, Ranger. Written in Python, Ranger is a TUI file manager that does a lot of things right (see below). The current state of alternatives is an unfortunate myriad of abandoned, [unstable](http://vifm.info/) projects, and [bloatware](https://github.com/MidnightCommander/mc) (or [non-terminal](http://docs.xfce.org/xfce/thunar/start)).
 
@@ -44,7 +46,7 @@ nav started out of frustration when dealing with an existing project, Ranger. Wr
   * open menu determined by type
 * useful features burried in menus and obscure python quasi-internal code
 
-##The Plguin Issue
+##The Plugin Issue
 
 Ranger's API is fundamentally anti-VIM. It was a naive attempt to make VIM features in a file manager. Because the entire underlying mechanisms are left customizable to the user no one shares the same core. Plugin development becomes intractable and undesired without a standard API to work against. And those that want to try have to know Python and have to study Ranger's codebase, even if what they want is achievable in a couple lines of a DSL like vimscript.
 
@@ -52,7 +54,7 @@ A better way to design customization is to create core functionality and then ex
 
 ##The Language Issue
 
-Configuration is desirable not just in scripts but during runtime. Sometimes it is beyond convenient but an actual requirement to be able to change commands inplace--define powerful one-liners as one would in bash--to accomplish adhoc tasks. 
+Configuration is desirable not just in scripts but during runtime. Sometimes it is beyond convenient but an actual requirement to be able to change commands inplace--define powerful one-liners as one would in Bash--to accomplish adhoc tasks. 
 
 Editing script files sucks. One has to navigate to the path, find or create the file, remember how scripting works for the program, load up the documentation because one rarely uses it enough to remember, make the changes, reload the file or the whole program depending, and then maybe it works if there were no mistakes. Contrast all that with writing one line in a familiar language, within the program already open, possibly with autocomplete support.
 
@@ -85,6 +87,7 @@ Another way to think about the situation: a DSL can always run external scripts 
 nav was created to address the above issues and introduce some modern software engineering techniques to this archaic problem domain. Just having an async core solves a significant number of UI problems. More become manageable with good design.
 
 Many areas of nav remain provisional and only solve known issues shallowly. Ideally, over time development will cover these areas better.
-
 * * *
-**2016-05-30**
+<div id="footer">
+  <a href=../index>Home</a>
+</div>

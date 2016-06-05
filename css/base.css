@@ -19,7 +19,6 @@ a:hover {
   color: #000000;
   background-color:transparent;
 }
-
 pre {
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
@@ -31,4 +30,7 @@ code {
   display: block;
   padding: 0.5em 1em;
   border: 1px solid #bebab0;
+}
+#footer {
+  text-align: center;
 }

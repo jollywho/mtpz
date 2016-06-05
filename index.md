@@ -26,7 +26,7 @@ linegrab stardic
 SDL danmakufu game
 
 ##POSTS
-+ [A layer above bash]()
++ [A layer above Bash](posts/A-layer-above-bash)
 + [Why another file manager?](posts/Why-another-filemanager)
 
 ##CONTACT
