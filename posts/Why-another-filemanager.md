@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../css/base.css">
 #Why another file manager?
 
-Nav started out of frustration when dealing with an existing project, Ranger. Written in Python, Ranger is a TUI file manager that does a lot of things right (see below). The current state of alternatives is an unfortunate myriad of abandoned, [unstable](http://vifm.info/) projects, and [bloatware](https://github.com/MidnightCommander/mc) (or [non-terminal](http://docs.xfce.org/xfce/thunar/start)).
+nav started out of frustration when dealing with an existing project, Ranger. Written in Python, Ranger is a TUI file manager that does a lot of things right (see below). The current state of alternatives is an unfortunate myriad of abandoned, [unstable](http://vifm.info/) projects, and [bloatware](https://github.com/MidnightCommander/mc) (or [non-terminal](http://docs.xfce.org/xfce/thunar/start)).
 
 ##What Ranger Gets Right
 

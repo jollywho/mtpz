@@ -10,10 +10,25 @@ h1,h2,h3,h4,h5 {
   padding-bottom: 0;
 }
 a {
+  color: #dc322f;
   text-decoration: none;
+  font-weight: 700;
 }
 a:hover {
   text-decoration: none;
   color: #000000;
   background-color:transparent;
+}
+
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  background: #faf8f0;
+  line-height:1.2em;
+}
+code {
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px solid #bebab0;
 }
