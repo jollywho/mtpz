@@ -8,16 +8,19 @@ if [[ -z $outdir ]]; then
   exit
 fi
 
-rm -r $outdir/*
+rm -rf ${outdir}
+mkdir ${outdir}
 
 markdown index.md > ${outdir}/index.html
-ln -s ${curdir}/css    ${outdir}/css
-ln -s ${curdir}/images ${outdir}/images
 
-postsdir=${outdir}/posts
+cd ${outdir}
+ln -s ../css    css
+ln -s ../images images
+
+postsdir=posts
 mkdir ${postsdir}
 
-for i in posts/*; do
+for i in ${curdir}/posts/*; do
   file=$(basename "$i")
   markdown "$i" > "${postsdir}/${file%%.*}.html"
 done

@@ -26,8 +26,8 @@ linegrab stardic
 SDL danmakufu game
 
 ##POSTS
-+ [A layer above Bash](posts/A-layer-above-bash.html)
-+ [Why another file manager?](posts/Why-another-filemanager.html)
++ [A layer above Bash](posts/A-layer-above-bash)
++ [Why another file manager?](posts/Why-another-filemanager)
 
 ##CONTACT
 [kvollmer@metaphorize.net](mailto:kvollmer@metaphorize.net)
