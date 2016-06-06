@@ -1,11 +1,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Metaphorize</title>
-<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 <link rel="stylesheet" href="css/base.css">
 
 ##Kevin Vollmer
 
-![](github.png)[GitHub](https://github.com/jollywho)
+![](images/github.png)[GitHub](https://github.com/jollywho)
 
 ##ABOUT
 I am a software developer.
@@ -26,8 +26,8 @@ linegrab stardic
 SDL danmakufu game
 
 ##POSTS
-+ [A layer above Bash](posts/A-layer-above-bash)
-+ [Why another file manager?](posts/Why-another-filemanager)
++ [A layer above Bash](posts/A-layer-above-bash.html)
++ [Why another file manager?](posts/Why-another-filemanager.html)
 
 ##CONTACT
 [kvollmer@metaphorize.net](mailto:kvollmer@metaphorize.net)
