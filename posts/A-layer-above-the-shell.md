@@ -1,10 +1,10 @@
-<title>A layer above Bash</title>
+<title>A layer above the shell</title>
 <link rel="stylesheet" href="../css/base.css">
 * * *
-#A layer above Bash
+#A layer above the shell
 _2016-06-05_
 
-navscript is intended to be used with Bash. From the start of navscript there has been a design goal to avoid pipes, sockets, language extensions, etc. so that the user can compose simple Bash from within nav.
+navscript is intended to be used with a shell. From the start of navscript there has been a design goal to avoid pipes, sockets, language extensions, etc. so that the user can compose simple shell scripts from within nav.
 
 ##Commands
 
@@ -37,24 +37,6 @@ Many commands support a reverse flag to change the behavior of the command (main
     else
       let bno = 0
     en
-
-##User Functions
-
-    fu! test_func()
-      echo test
-    end
-
-    fu! max(a,b)
-      if $a > $b
-        return $a
-      else
-        return $b
-      end
-    end
-
-    test_func()                # => test
-    echo max(1,9)              # => 9
-    echo max(nya,nyaaa)        # => nyan
 
 ##Statements
 
@@ -98,13 +80,13 @@ The STDOUT and STDERR of these processes is stored by nav and viewable from an O
 
 The planned method for extracting output from a processes is through expansions.
 
-    echo %0:$movie_pid    # => <stdout for pid#>
-    echo %1:$movie_pid    # => <stderr for pid#>
+    echo %1:$movie_pid    # => <stdout for pid#>
+    echo %2:$movie_pid    # => <stderr for pid#>
 
 and an await to force an synchronous result.
 
     let follow_pid = (!tail -f some_log_file)
-    echo (await %0+:follow_pid)    # all file descriptors
+    echo (await %1+:follow_pid)    # all file descriptors
 
 ##Arrays
 
@@ -117,6 +99,43 @@ and an await to force an synchronous result.
     echo $ary[1]             # => [cat, cow]
     echo $ary[1][0]          # => cat
 
+##User Functions
+
+    fu! test_func()
+      echo test
+    end
+
+    fu! max(a,b)
+      if $a > $b
+        return $a
+      else
+        return $b
+      end
+    end
+
+    test_func()                # => test
+    echo max(1,9)              # => 9
+    echo max(nya,nyaaa)        # => nyan
+
+##Plugin Namespacing
+
+    plug 'preview.nav' pvw
+    let a = [1,2]
+
+    #preview.nav
+    let a = 'pvw'
+
+    fu! tt()
+      let b = inside
+      echo $a $b pvw::$a
+    en
+
+    #test.nav
+    echo $a                 # => [1,2]
+    echo pvw::$a            # => inside
+    echo tt()               # => ''
+    echo pvw::tt()          # => '' inside 'pvw'
+
 #Future
 
 Planned features, not yet implemented.
@@ -124,7 +143,7 @@ Planned features, not yet implemented.
 #####Core concepts
 * simple and convenient.
 * navscript is not a generic language.
-* provide just enough glue to make meaningful Bash (or run in other languages).
+* provide just enough glue to make meaningful shell scripts (or run in other languages).
 
 ##Arithmetic
 
@@ -138,34 +157,7 @@ Planned features, not yet implemented.
     echo $a[key]                 # => val
     echo $a[cat]                 # => nyan
 
-##Namespaces
 
-Style still to be decided. Very important when writing plugins.
-
-*vim style*
-
-    #some_plugin.nav
-    let s:var = 9
-    fu! s:func()
-    end
-
-    #.navrc
-    echo $some_plugin#var
-    some_plugin#func()
-
-*python style*
-
-    #some_plugin.nav
-    let var = 9
-    fu! func()
-    end
-
-    #.navrc
-    import some_plugin as sp
-    echo sp.$var()
-    sp.func()
-
-*something other style*
 * * *
 <div id="footer">
   <a href=../index>Home</a>
